@@ -5,6 +5,7 @@ RUN apt-get install -y vim
 
 COPY apache2-foreground /usr/local/bin/
 COPY conf/ /etc/apache2
+COPY templates /var/apache2/templates
 
 RUN chmod 755 /usr/local/bin/apache2-foreground
 
