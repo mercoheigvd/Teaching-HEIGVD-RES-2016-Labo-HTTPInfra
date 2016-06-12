@@ -3,9 +3,10 @@ $(function() {
 	
 	function loadColors() {
 		$.getJSON("/api/color/", function(colors) {
-			var content = "<p>No colors...</p>";
+			var content = "<p>Colors : </p>";
 			
 			if(colors.length > 0) {
+				var content = "";
 				for(var i = 0; i < colors.length; i++){
 					content += "<p style='color: " + colors[i] + ";'>Color " + i + "</p>";
 				}
@@ -15,5 +16,5 @@ $(function() {
 		});
 	}
 	
-	loadColors();
+	setInterval(loadColors, 2000);
 });
