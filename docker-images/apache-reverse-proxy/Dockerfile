@@ -6,5 +6,7 @@ RUN apt-get install -y vim
 COPY apache2-foreground /usr/local/bin/
 COPY conf/ /etc/apache2
 
+RUN chmod 755 /usr/local/bin/apache2-foreground
+
 RUN a2enmod proxy proxy_http
 RUN a2ensite 000-* 001-*
